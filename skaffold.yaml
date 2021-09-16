@@ -10,12 +10,16 @@ build:
     context: ./location
     docker:
       dockerfile: Dockerfile
-  - image: api-db-mig
+  - image: api-db-mig 
     context: ./migrations
     docker:
       dockerfile: Dockerfile.dev
+  - image: jobs-cleaner 
+    context: ./devops/jobs-cleaner
+    docker:
+      dockerfile: Dockerfile
 deploy:
   kubeContext: docker-desktop
   kubectl:
     manifests:
-      - ./k8s/*
+      - ./devops/k8s/*
