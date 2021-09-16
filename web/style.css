@@ -1,0 +1,9 @@
+  #formSection {
+    padding-bottom:20px;
+  }
+  input, textarea, select, button {
+    width : 150px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
