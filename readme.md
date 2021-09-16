@@ -50,6 +50,6 @@ I första versionen kan vi endast rapportera observationer av IT-konsulter, vi k
 Klona detta repo och utveckla demoapplikationen att ... 
 - rapportera observationer av något annat än IT-konsulter? 
 - kanske lägga till något nytt fält för att beskriva de IT-konsulter vi observerar?
-- lägga till input-validering?
+
 
 
