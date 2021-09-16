@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: locationmock
+spec:
+  ports:
+  - name: "8181"
+    port: 8181
+  type: LoadBalancer
+  selector:
+    app: locationmock
+status:
+  loadBalancer: {}

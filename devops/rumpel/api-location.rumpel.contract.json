@@ -1,0 +1,40 @@
+﻿{
+  "Name": "api-location",
+  "URL": "http://location:8181",
+  "Transactions": [
+    {
+      "Request": {
+        "Path": "/location",
+        "Method": "POST",
+        "RawBody": "[\u0022stockholm\u0022]",
+        "Headers": {
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "traceparent": [
+            "00-332ab5ba2dcb9b4387c23a8275c61e0b-f92a9ac7078e8c48-00"
+          ],
+          "Content-Length": [
+            "13"
+          ]
+        }
+      },
+      "Response": {
+        "StatusCode": 200,
+        "Headers": {
+          "Date": [
+            "Thu, 16 Sep 2021 16:18:52 GMT"
+          ],
+          "Server": [
+            "Kestrel"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ]
+        },
+        "RawBody": "[{\u0022name\u0022:\u0022Stockholm\u0022,\u0022lat\u0022:59.333333333333336,\u0022long\u0022:18.05}]"
+      },
+      "Customizations": []
+    }
+  ]
+}

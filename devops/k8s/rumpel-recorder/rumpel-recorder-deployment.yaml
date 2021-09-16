@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rumpelrecorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rumpelrecorder
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+       app: rumpelrecorder
+    spec:
+      containers:
+      - image: hellgrenj/rumpel:v0.2.1
+        command: ["dotnet", "./Rumpel.dll", "-r", --target-api=http://location:8181, "--contract-name=api-location"]
+        ports:
+        - containerPort: 8181
+        resources: {}
+        name: rumpelrecorder
+status: {}

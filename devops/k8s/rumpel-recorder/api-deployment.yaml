@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: Job # <-- job that runs db migrations (only one instance will run regardless of number of api instances...)
+metadata:
+  name: api-db-mig
+spec:
+  template:
+    spec:
+      containers:
+      - name: api-db-mig
+        image: api-db-mig
+      restartPolicy: Never
+  backoffLimit: 10
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: api
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      initContainers: # <-- init container that waits for migration job to be finished before starting main container (api)
+      - name: "wait-for-api-db-mig"
+        image: "groundnuty/k8s-wait-for:1.3"
+        imagePullPolicy: ""
+        args: 
+        - "job"
+        - "api-db-mig"
+      containers:
+        - env:
+            - name: POSTGRES_CONNECTION_STRING
+              value: Host=postgres;Database=artlab;Username=panda;Password=artylaby
+            - name: LOCATION_SERVICE_URL
+              value: http://rumpelrecorder:8181
+          image: api
+          name: api
+          ports:
+            - containerPort: 1337
+          resources: {}
+      restartPolicy: Always
+      imagePullSecrets:
+       - name: regcred
+status: {}

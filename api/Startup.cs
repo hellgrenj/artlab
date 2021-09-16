@@ -35,9 +35,10 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
              // location http client with polly retry policy
+            var locationServiceUrl = Environment.GetEnvironmentVariable("LOCATION_SERVICE_URL");
             services.AddHttpClient("location", c =>
             {
-                c.BaseAddress = new Uri("http://location:8181/");
+                c.BaseAddress = new Uri(locationServiceUrl);
             }).AddPolicyHandler(GetRetryPolicy());
             
             services.AddCors(o => o.AddPolicy("corsPolicy", builder =>

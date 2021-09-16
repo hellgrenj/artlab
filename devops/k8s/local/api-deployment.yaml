@@ -39,6 +39,8 @@ spec:
         - env:
             - name: POSTGRES_CONNECTION_STRING
               value: Host=postgres;Database=artlab;Username=panda;Password=artylaby
+            - name: LOCATION_SERVICE_URL
+              value: http://location:8181
           image: api
           name: api
           ports:

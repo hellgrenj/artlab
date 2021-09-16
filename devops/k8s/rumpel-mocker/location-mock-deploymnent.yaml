@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: locationmock
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: locationmock
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+       app: locationmock
+    spec:
+      containers:
+      - image: locationmock
+        ports:
+        - containerPort: 8181
+        resources: {}
+        name: locationmock
+status: {}

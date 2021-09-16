@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobs-cleaner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jobs-cleaner
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+       app: jobs-cleaner
+    spec:
+      containers:
+      - image: jobs-cleaner # removes finsihed jobs every 10 seconds (in our case these are the db migration jobs...)
+        name: jobs-cleaner
+        resources: {}
+status: {}

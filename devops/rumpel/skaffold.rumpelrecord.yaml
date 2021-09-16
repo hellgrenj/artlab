@@ -22,4 +22,5 @@ deploy:
   kubeContext: docker-desktop
   kubectl:
     manifests:
-      - ./devops/k8s/local/*
+      - ./devops/k8s/rumpel-recorder/*
+

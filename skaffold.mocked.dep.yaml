@@ -18,8 +18,12 @@ build:
     context: ./devops/jobs-cleaner
     docker:
       dockerfile: Dockerfile
+  - image: locationmock
+    context: ./devops/rumpel
+    docker:
+      dockerfile: Dockerfile
 deploy:
   kubeContext: docker-desktop
   kubectl:
     manifests:
-      - ./devops/k8s/local/*
+      - ./devops/k8s/rumpel-mocker/*
