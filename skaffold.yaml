@@ -1,0 +1,21 @@
+apiVersion: skaffold/v2beta11
+kind: Config
+build:
+  artifacts:
+  - image: api
+    context: ./api
+    docker:
+      dockerfile: Dockerfile
+  - image: location
+    context: ./location
+    docker:
+      dockerfile: Dockerfile
+  - image: api-db-mig
+    context: ./migrations
+    docker:
+      dockerfile: Dockerfile.dev
+deploy:
+  kubeContext: docker-desktop
+  kubectl:
+    manifests:
+      - ./k8s/*
