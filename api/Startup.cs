@@ -53,6 +53,9 @@ namespace api
 
             // Inject IDbConnection, with implementation from NpgsqlConnection class.
             var connectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
+            if(string.IsNullOrEmpty(connectionString))
+                connectionString="Host=localhost;Database=artlab;Username=panda;Password=artylaby";
+                
             services.AddTransient<IDbConnection>((sp) => new NpgsqlConnection(connectionString)); 
 
             services.AddControllers().AddFluentValidation(o => { o.RegisterValidatorsFromAssemblyContaining<Startup>(); });
