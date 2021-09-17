@@ -14,16 +14,17 @@ build:
     context: ./migrations
     docker:
       dockerfile: Dockerfile.dev
-  - image: jobs-cleaner 
-    context: ./devops/jobs-cleaner
-    docker:
-      dockerfile: Dockerfile
   - image: locationmock
     context: ./devops/rumpel
+    docker:
+      dockerfile: Dockerfile
+  - image: jobs-cleaner
+    context: ./devops/jobs-cleaner
     docker:
       dockerfile: Dockerfile
 deploy:
   kubeContext: docker-desktop
   kubectl:
     manifests:
+      - ./devops/k8s/*.yaml
       - ./devops/k8s/rumpel-mocker/*

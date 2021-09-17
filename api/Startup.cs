@@ -36,6 +36,9 @@ namespace api
         {
              // location http client with polly retry policy
             var locationServiceUrl = Environment.GetEnvironmentVariable("LOCATION_SERVICE_URL");
+            if(string.IsNullOrEmpty(locationServiceUrl))
+                locationServiceUrl = "http://localhost:8181";
+
             services.AddHttpClient("location", c =>
             {
                 c.BaseAddress = new Uri(locationServiceUrl);
@@ -48,7 +51,7 @@ namespace api
                        .AllowAnyHeader();
            }));
 
-            // Inject IDbConnection, with implementation from SqlConnection class.
+            // Inject IDbConnection, with implementation from NpgsqlConnection class.
             var connectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
             services.AddTransient<IDbConnection>((sp) => new NpgsqlConnection(connectionString)); 
 

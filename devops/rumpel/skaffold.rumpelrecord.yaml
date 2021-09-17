@@ -14,7 +14,7 @@ build:
     context: ./migrations
     docker:
       dockerfile: Dockerfile.dev
-  - image: jobs-cleaner 
+  - image: jobs-cleaner
     context: ./devops/jobs-cleaner
     docker:
       dockerfile: Dockerfile
@@ -22,5 +22,6 @@ deploy:
   kubeContext: docker-desktop
   kubectl:
     manifests:
+      - ./devops/k8s/*.yaml
       - ./devops/k8s/rumpel-recorder/*
 
