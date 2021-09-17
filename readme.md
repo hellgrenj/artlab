@@ -9,7 +9,7 @@ En enkel miljö för att bekanta sig med:
 * [Skaffold](https://skaffold.dev/)
 * Polly ... TODO....
 * Automatisk hantering av databasschemaförändringar mha [Roadhouse](https://github.com/chucknorris/roundhouse)
-* Automatiserade kontraktstester och stubbar av lokala beroenden mha [Rumpel](https://github.com/hellgrenj/Rumpel) (Kan ersätta med Postman eller PACT eller liknande om vi vill sen såklart!)
+* Automatiserade kontraktstester och stubbar av lokala beroenden mha [Rumpel](https://github.com/hellgrenj/Rumpel)
 
 ## Förutsättningar
 
