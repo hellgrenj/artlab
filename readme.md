@@ -7,9 +7,9 @@ En enkel miljö för att bekanta sig med:
 * [Docker](https://www.docker.com/)
 * [Kubernetes](https://kubernetes.io/)
 * [Skaffold](https://skaffold.dev/)
-* Polly ... TODO....
+* Felhantering i distribuerade system med [Polly](https://github.com/App-vNext/Polly)
 * Automatisk hantering av databasschemaförändringar mha [Roadhouse](https://github.com/chucknorris/roundhouse)
-* Automatiserade kontraktstester och stubbar av lokala beroenden mha [Rumpel](https://github.com/hellgrenj/Rumpel) (Kan ersätta med Postman eller PACT eller liknande om vi vill sen såklart!)
+* Automatiserade kontraktstester och stubbar av lokala beroenden mha [Rumpel](https://github.com/hellgrenj/Rumpel)
 
 ## Förutsättningar
 
@@ -42,7 +42,7 @@ I första versionen kan vi endast rapportera observationer av IT-konsulter, vi k
 
 ## Testa
 
-1. Navigera till ./api och starta API:et med: ```skaffold run``` 
+1. Starta API:et med: ```skaffold run``` 
 2. I en annan terminal (flik/fönster) navigera till ./webb och starta webbklienten med ```npx serve```
 
 ## Labb  
