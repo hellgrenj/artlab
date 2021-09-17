@@ -7,7 +7,7 @@ En enkel miljö för att bekanta sig med:
 * [Docker](https://www.docker.com/)
 * [Kubernetes](https://kubernetes.io/)
 * [Skaffold](https://skaffold.dev/)
-* Polly ... TODO....
+* Felhantering i distribuerade system med [Polly](https://github.com/App-vNext/Polly)
 * Automatisk hantering av databasschemaförändringar mha [Roadhouse](https://github.com/chucknorris/roundhouse)
 * Automatiserade kontraktstester och stubbar av lokala beroenden mha [Rumpel](https://github.com/hellgrenj/Rumpel)
 
