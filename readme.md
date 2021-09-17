@@ -42,7 +42,7 @@ I första versionen kan vi endast rapportera observationer av IT-konsulter, vi k
 
 ## Testa
 
-1. Navigera till ./api och starta API:et med: ```skaffold run``` 
+1. Starta API:et med: ```skaffold run``` 
 2. I en annan terminal (flik/fönster) navigera till ./webb och starta webbklienten med ```npx serve```
 
 ## Labb  
