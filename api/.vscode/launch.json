@@ -1,35 +1,30 @@
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            // Use IntelliSense to find out which attributes exist for C# debugging
-            // Use hover for the description of the existing attributes
-            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-            "name": ".NET Core Launch (web)",
+            "name": "Skaffold Debug",
             "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/net5.0/api.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}",
-            "stopAtEntry": false,
-            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
-            "serverReadyAction": {
-                "action": "openExternally",
-                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
-            },
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+            "request": "attach",
+            "processId": 1,
+            "justMyCode": false, // <--- default är true men fick sätta till false för att få source map nedan att fungera (efter intro av db-mig init container?)
+            "pipeTransport": {
+                "pipeProgram": "kubectl",
+                "pipeArgs": [
+                    "exec",
+                    "-i",
+                    "api-84c57d4986-h4vsj",  // <-------- change the name to the pod you debug. (get names with kubectl get pods)
+                    "--"
+                ],
+                "pipeCwd": "${workspaceFolder}",
+                "debuggerPath": "/dbg/netcore/vsdbg",
+                "quoteArgs": false
             },
             "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+                "/app": "${workspaceFolder}" 
             }
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach"
         }
     ]
 }
