@@ -15,7 +15,7 @@
                 "pipeArgs": [
                     "exec",
                     "-i",
-                    "api-84c57d4986-h4vsj",  // <-------- change the name to the pod you debug. (get names with kubectl get pods)
+                    "api-5d8c967f75-26x7w",  // <-------- change the name to the pod you debug. (get names with kubectl get pod -l app=api -o jsonpath="{.items[0].metadata.name}")
                     "--"
                 ],
                 "pipeCwd": "${workspaceFolder}",
@@ -25,6 +25,7 @@
             "sourceFileMap": {
                 "/app": "${workspaceFolder}" 
             }
+            
         }
     ]
 }
