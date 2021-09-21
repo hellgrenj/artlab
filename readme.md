@@ -8,7 +8,7 @@ En enkel miljö för att bekanta sig med:
 * [Kubernetes](https://kubernetes.io/)
 * [Skaffold](https://skaffold.dev/)
 * Felhantering i distribuerade system med [Polly](https://github.com/App-vNext/Polly)
-* Automatisk hantering av databasschemaförändringar mha [Roadhouse](https://github.com/chucknorris/roundhouse)
+* Automatisk hantering av databasschemaförändringar mha [Roundhouse](https://github.com/chucknorris/roundhouse)
 * Automatiserade kontraktstester och stubbar av lokala beroenden mha [Rumpel](https://github.com/hellgrenj/Rumpel)
 
 ## Förutsättningar
