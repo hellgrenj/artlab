@@ -6,16 +6,16 @@
       "Request": {
         "Path": "/location",
         "Method": "POST",
-        "RawBody": "[\u0022Helsinki\u0022]",
+        "RawBody": "[\u0022Nairobi\u0022]",
         "Headers": {
           "Content-Type": [
             "application/json; charset=utf-8"
           ],
           "traceparent": [
-            "00-de44a5889d1f4f40b5d1122d2f85a918-d33f6662d3e4f643-00"
+            "00-669b6de748381642b6bae46a31947d26-913c46426c50ed47-00"
           ],
           "Content-Length": [
-            "12"
+            "11"
           ]
         }
       },
@@ -23,7 +23,7 @@
         "StatusCode": 200,
         "Headers": {
           "Date": [
-            "Fri, 17 Sep 2021 13:31:56 GMT"
+            "Fri, 24 Sep 2021 13:09:41 GMT"
           ],
           "Server": [
             "Kestrel"
@@ -32,7 +32,7 @@
             "chunked"
           ]
         },
-        "RawBody": "[{\u0022name\u0022:\u0022Helsinki\u0022,\u0022lat\u0022:60.166666666666664,\u0022long\u0022:24.933333}]"
+        "RawBody": "[{\u0022name\u0022:\u0022Nairobi\u0022,\u0022lat\u0022:-1.2833333333333332,\u0022long\u0022:36.816667}]"
       },
       "Customizations": []
     }

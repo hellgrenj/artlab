@@ -14,7 +14,7 @@ En enkel miljö för att bekanta sig med:
 ## Förutsättningar
 
 Se till att du har [Docker Desktop](https://www.docker.com/products/docker-desktop) installerat och det inbyggda (singel-nod) kubernetesklustret aktiverat (Settings -> Kubernetes).
-Du behöver även [Installera Skaffold](https://skaffold.dev/docs/install/) och [Node](https://nodejs.org/en/). *Node behövs endast för att kunna serva vår webb app lokalt med* ```npx serve```
+Du behöver även [Installera Skaffold](https://skaffold.dev/docs/install/).
 
 ## Demoapplikation
 I vår enkla demoapplikation kan du skapa (POST) och hämta (GET) observationer. 
@@ -42,8 +42,7 @@ I första versionen kan vi endast rapportera observationer av IT-konsulter, vi k
 
 ## Testa
 
-1. Starta API:et med: ```skaffold run``` 
-2. I en annan terminal (flik/fönster) navigera till ./webb och starta webbklienten med ```npx serve```
+Starta systemet med: ```skaffold run``` och navigera till http://localhost i din webbläsare
 
 ## Labb  
 
