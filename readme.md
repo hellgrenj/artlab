@@ -2,7 +2,7 @@
 
 ## purpose
 
-A simple environment for getting to know:
+A simple demo application that you can use to get familiar with:
 
 * [Docker](https://www.docker.com/)
 * [Kubernetes](https://kubernetes.io/)
