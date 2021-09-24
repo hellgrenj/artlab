@@ -39,7 +39,7 @@ In this simple demo application you can create (POST) and fetch (GET) observatio
 
 ## run it
 
-run ```skaffold run``` in your terminal and navigate to http://localhost in your browser
+run ```skaffold run``` in your terminal and when everything is up and running navigate to http://localhost in your browser
 
 
 ## try adding something
