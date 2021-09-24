@@ -42,7 +42,7 @@ I första versionen kan vi endast rapportera observationer av IT-konsulter, vi k
 
 ## Testa
 
-Starta systemet med: ```skaffold run``` och navigera till http://localhost i din webbläsare
+Starta systemet med ```skaffold run``` och navigera till http://localhost i din webbläsare
 
 ## Labb  
 
