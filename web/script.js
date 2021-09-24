@@ -10,7 +10,7 @@ async function RenderObservations() {
     observationsDiv.innerHTML = ''
     var observations = await GetObservations();
     observations.forEach(ob => {
-        observationsDiv.innerHTML += `En IT-Konsult med beskrivningen "${ob.description}" observerades i ${ob.city} som har koordinaterna ${ob.lat} ${ob.long} <br/>`
+        observationsDiv.innerHTML += `An IT consultant with the description "${ob.description}" was observed in ${ob.city} (coordinates: ${ob.lat} ${ob.long} )<br/>`
     })
 }
 async function AddEventListeners() {

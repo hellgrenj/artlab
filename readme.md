@@ -1,24 +1,23 @@
 # Artlab
 
-## Syfte
+## purpose
 
-En enkel miljö för att bekanta sig med:
+A simple environment for getting to know:
 
 * [Docker](https://www.docker.com/)
 * [Kubernetes](https://kubernetes.io/)
 * [Skaffold](https://skaffold.dev/)
-* Felhantering i distribuerade system med [Polly](https://github.com/App-vNext/Polly)
-* Automatisk hantering av databasschemaförändringar mha [Roundhouse](https://github.com/chucknorris/roundhouse)
-* Automatiserade kontraktstester och stubbar av lokala beroenden mha [Rumpel](https://github.com/hellgrenj/Rumpel)
+* [Polly](https://github.com/App-vNext/Polly) (a .NET resilience and transient-fault-handling library)
+* [Roundhouse](https://github.com/chucknorris/roundhouse) (a Database Migration Utility for .NET using sql files and versioning based on source control)
+* [Rumpel](https://github.com/hellgrenj/Rumpel) (Simple, opinionated and automated consumer-driven contract testing for your JSON API's)
 
-## Förutsättningar
+## prerequisites
 
-Se till att du har [Docker Desktop](https://www.docker.com/products/docker-desktop) installerat och det inbyggda (singel-nod) kubernetesklustret aktiverat (Settings -> Kubernetes).
-Du behöver även [Installera Skaffold](https://skaffold.dev/docs/install/).
+You need to have [Docker Desktop](https://www.docker.com/products/docker-desktop) installed with Kubernetes enabled (Settings -> Kubernetes).
+You also need to [Install Skaffold](https://skaffold.dev/docs/install/).
 
-## Demoapplikation
-I vår enkla demoapplikation kan du skapa (POST) och hämta (GET) observationer. 
-I första versionen kan vi endast rapportera observationer av IT-konsulter, vi kanske kan förbättra och vidareutveckla detta ihop sen? =)
+## demo application
+In this simple demo application you can create (POST) and fetch (GET) observations of IT consultants. 
 
 ```
                |--------------|
@@ -27,11 +26,11 @@ I första versionen kan vi endast rapportera observationer av IT-konsulter, vi k
                |--------------|
                       |
                       | 
-           |----------------------|       |---------------------|        
-           |  API - Observationer |       | GPS-koordinater     |
-           | (.net 5 web api -    |-------|(.net 5 route-2-code |
-           |   json över http     |       | - json över http)   |    
-           |----------------------|       |---------------------|
+           |----------------------|       |------------------------|        
+           |  API - Observations  |       | Location (coordinates)-|
+           | (.net 5 web api -    |-------| (.net 5 route-2-code   |
+           |   json over http     |       | - json over http)      |    
+           |----------------------|       |------------------------|
                       |
                       |
                |------------|
@@ -40,15 +39,16 @@ I första versionen kan vi endast rapportera observationer av IT-konsulter, vi k
                |------------| 
 ``` 
 
-## Testa
+## run it
 
-Starta systemet med ```skaffold run``` och navigera till http://localhost i din webbläsare
+Start the system with ```skaffold run``` and navigate to http://localhost in your browser
 
-## Labb  
 
-Klona detta repo och utveckla demoapplikationen att ... 
-- rapportera observationer av något annat än IT-konsulter? 
-- kanske lägga till något nytt fält för att beskriva de IT-konsulter vi observerar?
+## try adding something
+
+perhaps: 
+- make it possible to create other types of observations 
+- add a new field to describe the IT consultants
 
 
 
