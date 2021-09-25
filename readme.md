@@ -41,6 +41,12 @@ In this simple demo application you can create and list observations of IT consu
 
 run ```skaffold run``` in your terminal and when everything is up and running navigate to http://localhost in your browser
 
+## run different scenarios
+
+run ```skaffold run -f skaffold.mocked.deps.yaml``` (in this scenario we use Rumpel and a 
+pre-recorded contract to mock the location service. You can record a new contract by following the instructions in [./devops/howtos/record-new-rumpel.contract.md](https://github.com/hellgrenj/artlab/blob/main/devops/howtos/record-new-rumpel-contract.md))  
+
+run ```skaffold run -f skaffold.only.deps.yaml``` (in this scenario we only spin up the location service and the database and run the database migrations. The location service and the database are available on localhost so you can now work with the api and web locally, outside of kubernetes)
 
 ## try adding something
 
