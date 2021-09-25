@@ -15,7 +15,7 @@ You need to have [Docker Desktop](https://www.docker.com/products/docker-desktop
 You also need to [Install Skaffold](https://skaffold.dev/docs/install/).
 
 ## demo application
-In this simple demo application you can create (POST) and fetch (GET) observations of IT consultants. 
+In this simple demo application you can create and list observations of IT consultants. 
 
 ```
                |--------------|
