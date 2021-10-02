@@ -27,7 +27,7 @@ namespace api.Controllers
             _clientFactory = clientFactory;
         }
         [HttpGet]
-        public async Task<IEnumerable<Observation>> Get() => await _connection.QueryAsync<Observation>("Select * From Observations").ConfigureAwait(false);
+        public async Task<IEnumerable<Observation>> Get() => await _connection.QueryAsync<Observation>("Select * From Observations");
 
         [HttpPost]
         public async Task<int> Create(Observation observation)
@@ -35,7 +35,7 @@ namespace api.Controllers
             var location = await GetCoordinatesAsync(observation.City);
             var sql = "INSERT INTO Observations (Description, City, Lat, Long) Values (@Description, @City, @Lat, @Long) RETURNING Id;";
             var createdId = await _connection.ExecuteScalarAsync(sql,
-            new { Description = observation.Description, City = observation.City, Lat = location.Lat, Long = location.Long }).ConfigureAwait(false);
+            new { Description = observation.Description, City = observation.City, Lat = location.Lat, Long = location.Long });
             _logger.LogInformation($"created new observation with id {createdId}");
             return (int)createdId;
         }
