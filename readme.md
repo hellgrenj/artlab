@@ -39,7 +39,7 @@ In this simple demo application you can create and list observations of IT consu
 
 ## run it
 
-run ```skaffold run``` in your terminal and when everything is up and running navigate to http://localhost in your browser
+run ```skaffold run``` in your terminal and when everything is up and running navigate to http://localhost in your browser (http://localhost:1337/swagger for the API Swagger UI)
 
 ## run different scenarios
 

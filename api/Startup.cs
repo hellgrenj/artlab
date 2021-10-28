@@ -34,16 +34,16 @@ namespace api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             // location http client with polly retry policy
+            // location http client with polly retry policy
             var locationServiceUrl = Environment.GetEnvironmentVariable("LOCATION_SERVICE_URL");
-            if(string.IsNullOrEmpty(locationServiceUrl))
+            if (string.IsNullOrEmpty(locationServiceUrl))
                 locationServiceUrl = "http://localhost:8181";
 
             services.AddHttpClient("location", c =>
             {
                 c.BaseAddress = new Uri(locationServiceUrl);
             }).AddPolicyHandler(GetRetryPolicy());
-            
+
             services.AddCors(o => o.AddPolicy("corsPolicy", builder =>
            {
                builder.AllowAnyOrigin()
@@ -53,10 +53,10 @@ namespace api
 
             // Inject IDbConnection, with implementation from NpgsqlConnection class.
             var connectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
-            if(string.IsNullOrEmpty(connectionString))
-                connectionString="Host=localhost;Database=artlab;Username=panda;Password=artylaby";
-                
-            services.AddTransient<IDbConnection>((sp) => new NpgsqlConnection(connectionString)); 
+            if (string.IsNullOrEmpty(connectionString))
+                connectionString = "Host=localhost;Database=artlab;Username=panda;Password=artylaby";
+
+            services.AddTransient<IDbConnection>((sp) => new NpgsqlConnection(connectionString));
 
             services.AddControllers().AddFluentValidation(o => { o.RegisterValidatorsFromAssemblyContaining<Startup>(); });
             services.AddSwaggerGen(c =>
@@ -68,12 +68,10 @@ namespace api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "api v1"));
-            }
+
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "api v1"));
 
             app.UseRouting();
             app.UseCors("corsPolicy");
