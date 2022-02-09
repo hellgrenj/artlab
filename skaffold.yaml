@@ -18,10 +18,6 @@ build:
     context: ./migrations
     docker:
       dockerfile: Dockerfile.dev
-  - image: jobs-cleaner
-    context: ./devops/jobs-cleaner
-    docker:
-      dockerfile: Dockerfile
 deploy:
   kubeContext: docker-desktop
   kubectl:

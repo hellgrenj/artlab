@@ -3,6 +3,7 @@ kind: Job # <-- job that runs db migrations (only one instance will run regardle
 metadata:
   name: api-db-mig
 spec:
+  ttlSecondsAfterFinished: 10 # removes finished job after 10 seconds
   template:
     spec:
       containers:

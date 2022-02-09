@@ -22,10 +22,6 @@ build:
     context: ./devops/rumpel
     docker:
       dockerfile: Dockerfile
-  - image: jobs-cleaner
-    context: ./devops/jobs-cleaner
-    docker:
-      dockerfile: Dockerfile
 deploy:
   kubeContext: docker-desktop
   kubectl:
